@@ -19,13 +19,20 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
  
         <!--Control Panorama-->
-        <controls:Panorama Title="NaturApp">
+        <controls:Panorama>
+            <controls:Panorama.TitleTemplate>
+                <DataTemplate>
+                    <Grid Height="250">
+                        <Image Source="/Imagenes/logo.png" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="140" Width="200" Margin="120,0,0,0"></Image>
+                    </Grid>
+                </DataTemplate>
+            </controls:Panorama.TitleTemplate>
             <controls:Panorama.Background>
-                <ImageBrush ImageSource="PanoramaBackground.png"/>
+                <ImageBrush ImageSource="/Imagenes/background.png"/>
             </controls:Panorama.Background>
  
             <!--Elemento Panorama uno-->
-            <controls:PanoramaItem Header="primer elemento">
+            <controls:PanoramaItem Header="Pedidos">
                 <!--Lista de líneas dobles con ajuste de texto-->
                 <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
@@ -41,7 +48,7 @@
  
             <!--Elemento Panorama dos-->
             <!--Use 'Orientation="Horizontal"' para habilitar un panel que dispuesto horizontalmente-->
-            <controls:PanoramaItem Header="segundo elemento">
+            <controls:PanoramaItem Header="Clientes">
                 <!--Lista de líneas dobles con marcador de posición de imagen y ajuste de texto-->
                 <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
@@ -58,6 +65,25 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </controls:PanoramaItem>
+
+            <controls:PanoramaItem Header="Consultas">
+                <!--Lista de líneas dobles con marcador de posición de imagen y ajuste de texto-->
+                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                                <!--Reemplazar el rectángulo por la imagen-->
+                                <Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>
+                                <StackPanel Width="311">
+                                    <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                    <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PanoramaItem>
+            
         </controls:Panorama>
     </Grid>
 </phone:PhoneApplicationPage>
