@@ -33,5 +33,23 @@ namespace NaturApp
                 App.ViewModel.LoadData();
             }
         }
+
+        private void crear_Click(object sender, EventArgs e)
+        {
+            int indice = PanoramaNatura.SelectedIndex;
+
+            switch (indice)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    NavigationService.Navigate(new Uri("/Clientes/crearCliente.xaml", UriKind.Relative));
+                    break;
+                case 3:
+                    break;
+            }
+        }
     }
 }
