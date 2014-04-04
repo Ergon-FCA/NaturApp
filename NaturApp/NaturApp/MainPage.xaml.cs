@@ -10,15 +10,22 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using SQLite;
+using NaturApp.Clientes;
 
 namespace NaturApp
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        SQLiteConnection db;
+
         // Constructor
         public MainPage()
         {
             InitializeComponent();
+
+            db = new SQLiteConnection("naturapp.db");
+            db.CreateTable<tablaClientes>();
 
             // Establecer el contexto de datos del control ListBox control en los datos de ejemplo
             DataContext = App.ViewModel;

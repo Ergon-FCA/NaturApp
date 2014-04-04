@@ -11,6 +11,10 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using System.Collections.ObjectModel;
+using System.IO.IsolatedStorage;
+using SQLite;
+using System.Globalization;
+
 
 namespace NaturApp.Clientes
 {
@@ -18,6 +22,14 @@ namespace NaturApp.Clientes
     {
         ObservableCollection<cEstadoCivil> source;
         SQLiteConnection db;
+        string nombre;
+        string apellidos;
+        string direccion;
+        string telefono;
+        string correo;
+        string sexo;
+        string estadoCivil;
+        string fechaNacimiento;
 
         public crearCliente()
         {
@@ -34,6 +46,44 @@ namespace NaturApp.Clientes
 
             listPicker.ItemsSource = source;
 
+            db = new SQLiteConnection("naturapp.db");
+
+        }
+
+        private void guardar_Click(object sender, RoutedEventArgs e)
+        {
+            nombre = txtNombre.Text;
+            apellidos = txtApellidos.Text;
+            direccion = txtDireccion.Text;
+            telefono = txtTelefono.Text;
+            correo = txtCorreo.Text;
+
+            DateTime date = (DateTime)datePicker.Value;
+            fechaNacimiento = date.ToString("ddMMyyyy", CultureInfo.InvariantCulture);
+
+            if (rdbFemenino.IsChecked == true)
+                sexo = "F";
+            else
+                if (rdbMasculino.IsChecked == true)
+                    sexo = "M";
+                else
+                    sexo = "NA";
+
+            cEstadoCivil estado = listPicker.SelectedItem as cEstadoCivil;
+            estadoCivil = estado.Nombre.ToString();
+
+            db.Insert(new tablaClientes()
+            {
+                nombres = this.nombre,
+                apellidos = this.apellidos,
+                direccion = this.direccion,
+                telefono = this.telefono,
+                correo = this.correo,
+                sexo = this.sexo,
+                estadoCivil = this.estadoCivil,
+                fechaNacimiento = this.fechaNacimiento
+            });
+            
         }
     }
 }

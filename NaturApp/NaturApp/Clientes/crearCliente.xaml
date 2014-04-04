@@ -81,7 +81,7 @@
                     <TextBlock Text="Estado Civil" FontSize="25" FontFamily="Comic Sans MS" Foreground="Maroon"></TextBlock>
                     <toolkit:ListPicker x:Name="listPicker" Foreground="Black" ItemTemplate="{StaticResource ListPickerItemTemplate}" FullModeItemTemplate="{StaticResource ListPickerFullModeItemTemplate}" CacheMode="BitmapCache"/>
                     <TextBlock></TextBlock>
-                    <Button Name="guardar" Content="Guardar" Foreground="White" Background="Gray"></Button>
+                    <Button Name="guardar" Content="Guardar" Foreground="White" Background="Gray" Click="guardar_Click"></Button>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
