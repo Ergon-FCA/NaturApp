@@ -70,8 +70,16 @@ namespace NaturApp.Clientes
                     sexo = "NA";
 
             cEstadoCivil estado = listPicker.SelectedItem as cEstadoCivil;
-            estadoCivil = estado.Nombre.ToString();
-
+            if (estado.Nombre.ToString().Equals("Seleccione"))
+            {
+                MessageBox.Show("Es necesario que eligas un estado civil");
+                return;
+            }
+            else
+            {
+                estadoCivil = estado.Nombre.ToString();
+            }
+            
             db.Insert(new tablaClientes()
             {
                 nombres = this.nombre,
@@ -83,7 +91,14 @@ namespace NaturApp.Clientes
                 estadoCivil = this.estadoCivil,
                 fechaNacimiento = this.fechaNacimiento
             });
-            
+
+            MessageBox.Show("Cliente creado satisfactoriamente");
+            txtNombre.Text = "";
+            txtApellidos.Text = "";
+            txtDireccion.Text = "";
+            txtTelefono.Text = "";
+            txtCorreo.Text = "";
+            listPicker.SelectedIndex = 0;
         }
     }
 }

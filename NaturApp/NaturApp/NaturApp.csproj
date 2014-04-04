@@ -77,6 +77,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Clientes\cEstadoCivil.cs" />
+    <Compile Include="Clientes\consultarCliente.xaml.cs">
+      <DependentUpon>consultarCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Clientes\crearCliente.xaml.cs">
       <DependentUpon>crearCliente.xaml</DependentUpon>
     </Compile>
@@ -94,6 +97,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Clientes\consultarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Clientes\crearCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
