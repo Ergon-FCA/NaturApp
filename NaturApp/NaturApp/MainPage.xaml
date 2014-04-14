@@ -120,10 +120,10 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True"
                               IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton x:Name="crear" IconUri="icons/tarjetero_over2.png" Text="Crear" Click="crear_Click" />
-            <shell:ApplicationBarIconButton x:Name="actualizar" IconUri="icons/Klip 48x48.png" Text="Actualizar" />
-            <shell:ApplicationBarIconButton x:Name="eliminar" IconUri="icons/favoritos_over2.png" Text="Eliminar" />
-            <shell:ApplicationBarIconButton x:Name="consultar" IconUri="icons/promociones_over2.png" Text="Consultar" Click="consultar_Click" />
+            <shell:ApplicationBarIconButton x:Name="crear" IconUri="Imagenes/add.png" Text="Crear" Click="crear_Click" />
+            <shell:ApplicationBarIconButton x:Name="actualizar" IconUri="Imagenes/edit.png" Text="Actualizar" />
+            <shell:ApplicationBarIconButton x:Name="eliminar" IconUri="Imagenes/less.png" Text="Eliminar" />
+            <shell:ApplicationBarIconButton x:Name="consultar" IconUri="Imagenes/search.png" Text="Consultar" Click="consultar_Click" />
 
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem x:Name="respaldar" Text="Respaldar"/>

@@ -10,7 +10,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
@@ -40,26 +40,45 @@
 
         <!--ContentPanel. Colocar aquí el contenido adicional-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <ListBox Name="listClientes">
+            <ListBox Name="listClientes" Margin="-12,17,0,0" SelectionChanged="listClientes_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Name="txtNombre" Text="{Binding nombre}"></TextBlock>                        
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="180"/>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="15*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Name="txtNombre" Text="{Binding nombres}" Grid.Row="0" Grid.Column="1" FontSize="28" FontFamily="Comic Sans MS" ></TextBlock>
+                                <TextBlock Name="txtApellidos" Text="{Binding apellidos}" Grid.Row="0" Grid.Column="4" FontSize="28" FontFamily="Comic Sans MS" ></TextBlock>
+                                <TextBlock Name="txtTelefono" Text="{Binding telefono}" Grid.Row="1" Grid.Column="1" FontSize="28" FontFamily="Comic Sans MS" ></TextBlock>
+                            </Grid>
+                            <Border Background="Maroon"  BorderBrush="Silver" BorderThickness="0.5" Height="10" HorizontalAlignment="Left" Name="border0" VerticalAlignment="Center"  Width="514">
+                                <!--<TextBlock Text="Compartir" Foreground="White"></TextBlock>-->
+                            </Border>
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
     </Grid>
- 
+
     <!--Código de ejemplo que muestra el uso de ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
+    <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Botón 1"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Botón 2"/>
-            <shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton IconUri="/Imagenes/save.png" Text="Detalle"/>
+            <shell:ApplicationBarIconButton IconUri="/Imagenes/edit.png" Text="Editar"/>
+            <!--<shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="Elemento de menú 1"/>
                 <shell:ApplicationBarMenuItem Text="Elemento de menú 2"/>
-            </shell:ApplicationBar.MenuItems>
+            </shell:ApplicationBar.MenuItems>-->
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

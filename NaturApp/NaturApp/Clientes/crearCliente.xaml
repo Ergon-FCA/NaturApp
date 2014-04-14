@@ -62,7 +62,7 @@
                     <TextBlock Text="Dirección" FontSize="25" FontFamily="Comic Sans MS" Foreground="Maroon"></TextBlock>
                     <TextBox Name="txtDireccion" BorderBrush="Black"></TextBox>
                     <TextBlock Text="Teléfono" FontSize="25" FontFamily="Comic Sans MS" Foreground="Maroon"></TextBlock>
-                    <TextBox Name="txtTelefono" BorderBrush="Black"></TextBox>
+                    <TextBox Name="txtTelefono" BorderBrush="Black"  TextBox.InputScope="Number"></TextBox>
                     <TextBlock Text="Correo electrónico" FontSize="25" FontFamily="Comic Sans MS" Foreground="Maroon"></TextBlock>
                     <TextBox Name="txtCorreo" BorderBrush="Black"></TextBox>
                     <TextBlock Text="Sexo" FontSize="25" FontFamily="Comic Sans MS" Foreground="Maroon"></TextBlock>
