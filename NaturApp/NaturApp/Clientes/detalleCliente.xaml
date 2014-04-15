@@ -1,0 +1,81 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="NaturApp.Clientes.detalleCliente"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagenes/background.png"></ImageBrush>
+        </Grid.Background>
+
+        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+        <StackPanel x:Name="TitlePanel" Background="#FF5100" Margin="0,0,0,28" Height="97">
+            <Grid Name="gridTitulo" Height="80">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="164*" />
+                    <ColumnDefinition Width="316*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="/Imagenes/logo.png" Grid.Column="0" HorizontalAlignment="Center"></Image>
+                <TextBlock Grid.Column="1" Text="Detalle Cliente" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="38"></TextBlock>
+            </Grid>
+        </StackPanel>
+
+        <!--ContentPanel. Colocar aquí el contenido adicional-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <TextBlock Text="Nombre: " FontSize="22" Foreground="#3c1809"></TextBlock>
+                <TextBlock Name="txtNombre" Text="" Margin="20,0,0,0" FontSize="24" Foreground="#3c1809" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="Dirección:" FontSize="22" Foreground="#3c1809"></TextBlock>
+                <TextBlock Name="txtDireccion" Text="" Margin="20,0,0,0" FontSize="24" Foreground="#3c1809" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="Teléfono:" FontSize="22" Foreground="#3c1809"></TextBlock>
+                <TextBlock Name="txtTelefono" Text="" Margin="20,0,0,0" FontSize="24" Foreground="#3c1809" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="Correo:" FontSize="22" Foreground="#3c1809"></TextBlock>
+                <TextBlock Name="txtCorreo" Text="" Margin="20,0,0,0" FontSize="24" Foreground="#3c1809" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="Sexo:" FontSize="22" Foreground="#3c1809"></TextBlock>
+                <TextBlock Name="txtSexo" Text="" Margin="20,0,0,0" FontSize="24" Foreground="#3c1809" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="Fecha de nacimiento:" FontSize="22" Foreground="#3c1809"></TextBlock>
+                <TextBlock Name="txtFecha" Text="" Margin="20,0,0,0" FontSize="24" Foreground="#3c1809" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="Estado Civil:" FontSize="22" Foreground="#3c1809"></TextBlock>
+                <TextBlock Name="txtCivil" Text="" Margin="20,0,0,0" FontSize="24" Foreground="#3c1809" FontWeight="Bold"></TextBlock>
+                <TextBlock Height="29"></TextBlock>
+                <Grid Height="106" Width="404">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="213" />
+                        <ColumnDefinition Width="243" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="/Imagenes/btn_llamar.png" Name="btnLLamar" Tap="btnLLamar_Tap"></Image>
+                    <Image Grid.Column="1" Source="/Imagenes/btn_mail.png" Name="btnCorreo" Margin="0,0,40,0" Tap="btnCorreo_Tap"></Image>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+ 
+    <!--Código de ejemplo que muestra el uso de ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Botón 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Botón 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Elemento de menú 1"/>
+                <shell:ApplicationBarMenuItem Text="Elemento de menú 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

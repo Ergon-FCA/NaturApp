@@ -55,9 +55,9 @@
                                     <RowDefinition Height="15*"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Name="txtNombre" Text="{Binding nombres}" Grid.Row="0" Grid.Column="1" FontSize="28" FontFamily="Comic Sans MS" ></TextBlock>
-                                <TextBlock Name="txtApellidos" Text="{Binding apellidos}" Grid.Row="0" Grid.Column="4" FontSize="28" FontFamily="Comic Sans MS" ></TextBlock>
-                                <TextBlock Name="txtTelefono" Text="{Binding telefono}" Grid.Row="1" Grid.Column="1" FontSize="28" FontFamily="Comic Sans MS" ></TextBlock>
+                                <TextBlock Name="txtNombre" Text="{Binding nombres}" Grid.Row="0" Grid.Column="1" FontSize="28" FontFamily="Comic Sans MS" Foreground="#3c1809" ></TextBlock>
+                                <TextBlock Name="txtApellidos" Text="{Binding apellidos}" Grid.Row="0" Grid.Column="4" FontSize="28" FontFamily="Comic Sans MS" Foreground="#3c1809" ></TextBlock>
+                                <TextBlock Name="txtTelefono" Text="{Binding telefono}" Grid.Row="1" Grid.Column="1" FontSize="28" FontFamily="Comic Sans MS" Foreground="#3c1809" ></TextBlock>
                             </Grid>
                             <Border Background="Maroon"  BorderBrush="Silver" BorderThickness="0.5" Height="10" HorizontalAlignment="Left" Name="border0" VerticalAlignment="Center"  Width="514">
                                 <!--<TextBlock Text="Compartir" Foreground="White"></TextBlock>-->
@@ -72,8 +72,8 @@
     <!--Código de ejemplo que muestra el uso de ApplicationBar-->
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Imagenes/save.png" Text="Detalle"/>
-            <shell:ApplicationBarIconButton IconUri="/Imagenes/edit.png" Text="Editar"/>
+            <shell:ApplicationBarIconButton x:Name="detalle" IconUri="/Imagenes/save.png" Text="Detalle" Click="detalle_Click"/>
+            <shell:ApplicationBarIconButton x:Name="editar" IconUri="/Imagenes/edit.png" Text="Editar" Click="editar_Click"/>
             <!--<shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="Elemento de menú 1"/>
                 <shell:ApplicationBarMenuItem Text="Elemento de menú 2"/>

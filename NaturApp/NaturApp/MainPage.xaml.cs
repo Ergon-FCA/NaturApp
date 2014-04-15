@@ -12,12 +12,15 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using SQLite;
 using NaturApp.Clientes;
+using System.Collections.ObjectModel;
 
 namespace NaturApp
 {
     public partial class MainPage : PhoneApplicationPage
     {
         SQLiteConnection db;
+        IEnumerable<tablaClientes> clientes;
+        ObservableCollection<Cliente> arrClientes;
 
         // Constructor
         public MainPage()
@@ -39,6 +42,30 @@ namespace NaturApp
             {
                 App.ViewModel.LoadData();
             }
+        }
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            var count = (from x in db.Table<tablaClientes>() select x.idCliente).Count();
+            if (count > 0)
+            {
+                clientes = db.Query<tablaClientes>("SELECT idCliente, nombres, apellidos, direccion, telefono, correo, sexo, fechaNacimiento, estadoCivil from tablaClientes");
+
+                arrClientes = new ObservableCollection<Cliente>();
+
+                int i = 0;
+                foreach (var cliente in clientes)
+                {
+                    arrClientes.Add(new Cliente(cliente.idCliente.ToString(), cliente.nombres, cliente.apellidos, cliente.direccion, cliente.telefono, cliente.correo, cliente.sexo, cliente.fechaNacimiento, cliente.estadoCivil));
+                    if (i > 3)
+                        break;
+                    i++;
+                }
+
+                listClientes.ItemsSource = arrClientes;
+            }
+
+            base.OnNavigatedTo(e);
         }
 
         private void crear_Click(object sender, EventArgs e)

@@ -55,7 +55,27 @@ namespace NaturApp.Clientes
         {
             var cliente = listClientes.SelectedItem as Cliente;
 
-            MessageBox.Show("El id del cliente es:" + cliente.id);
+            //MessageBox.Show("El id del cliente es:" + cliente.id);
+        }
+
+        private void detalle_Click(object sender, EventArgs e)
+        {
+            var cliente = listClientes.SelectedItem as Cliente;
+
+            if (cliente != null)
+                NavigationService.Navigate(new Uri("/Clientes/detalleCliente.xaml?idCliente=" + cliente.id.ToString(), UriKind.Relative));
+            else
+                MessageBox.Show("No has seleccionado ningún cliente");
+        }
+
+        private void editar_Click(object sender, EventArgs e)
+        {
+            var cliente = listClientes.SelectedItem as Cliente;
+
+            if (cliente != null)
+                NavigationService.Navigate(new Uri("/Clientes/editarCliente.xaml?idCliente=" + cliente.id.ToString(), UriKind.Relative));
+            else
+                MessageBox.Show("No has seleccionado ningún cliente");
         }
     }
 }

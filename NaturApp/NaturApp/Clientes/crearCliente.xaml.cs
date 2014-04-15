@@ -61,6 +61,12 @@ namespace NaturApp.Clientes
             DateTime date = (DateTime)datePicker.Value;
             fechaNacimiento = date.ToString("ddMMyyyy", CultureInfo.InvariantCulture);
 
+            if (rdbFemenino.IsChecked == false && rdbMasculino.IsChecked == false)
+            {
+                MessageBox.Show("Debes seleccionar el sexo del cliente");
+                return;
+            }
+
             if (rdbFemenino.IsChecked == true)
                 sexo = "F";
             else
