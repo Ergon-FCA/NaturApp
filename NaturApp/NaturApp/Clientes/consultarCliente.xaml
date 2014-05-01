@@ -43,25 +43,13 @@
             <ListBox Name="listClientes" Margin="-12,17,0,0" SelectionChanged="listClientes_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="20"/>
-                                    <ColumnDefinition Width="180"/>
-                                    <ColumnDefinition Width="20"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="15*"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Name="txtNombre" Text="{Binding nombres}" Grid.Row="0" Grid.Column="1" FontSize="28" FontFamily="Comic Sans MS" Foreground="#3c1809" ></TextBlock>
-                                <TextBlock Name="txtApellidos" Text="{Binding apellidos}" Grid.Row="0" Grid.Column="4" FontSize="28" FontFamily="Comic Sans MS" Foreground="#3c1809" ></TextBlock>
-                                <TextBlock Name="txtTelefono" Text="{Binding telefono}" Grid.Row="1" Grid.Column="1" FontSize="28" FontFamily="Comic Sans MS" Foreground="#3c1809" ></TextBlock>
-                            </Grid>
-                            <Border Background="Maroon"  BorderBrush="Silver" BorderThickness="0.5" Height="10" HorizontalAlignment="Left" Name="border0" VerticalAlignment="Center"  Width="514">
-                                <!--<TextBlock Text="Compartir" Foreground="White"></TextBlock>-->
-                            </Border>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                            <Rectangle Height="20" Width="20" Fill="Maroon"  Margin="12,0,9,0"/>
+                            <StackPanel >
+                                <TextBlock Text="{Binding nombres}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" Foreground="#3c1809"/>
+                                <TextBlock Text="{Binding telefono}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="#3c1809"/>
+                            </StackPanel>
+                            <TextBlock Text="{Binding apellidos}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" Foreground="#3c1809"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

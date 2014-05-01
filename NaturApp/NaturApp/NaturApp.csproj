@@ -78,6 +78,9 @@
     </Compile>
     <Compile Include="Clientes\cEstadoCivil.cs" />
     <Compile Include="Clientes\Cliente.cs" />
+    <Compile Include="Clientes\consultaActualizarCliente.xaml.cs">
+      <DependentUpon>consultaActualizarCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Clientes\consultarCliente.xaml.cs">
       <DependentUpon>consultarCliente.xaml</DependentUpon>
     </Compile>
@@ -89,6 +92,9 @@
     </Compile>
     <Compile Include="Clientes\editarCliente.xaml.cs">
       <DependentUpon>editarCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\eliminarCliente.xaml.cs">
+      <DependentUpon>eliminarCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Clientes\tablaClientes.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -104,6 +110,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Clientes\consultaActualizarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Clientes\consultarCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Clientes\editarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Clientes\eliminarCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -170,6 +184,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pedidos\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

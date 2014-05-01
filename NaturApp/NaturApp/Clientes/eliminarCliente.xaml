@@ -1,0 +1,73 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="NaturApp.Clientes.eliminarCliente"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagenes/background.png"></ImageBrush>
+        </Grid.Background>
+
+        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+        <StackPanel x:Name="TitlePanel" Background="#FF5100" Height="97">
+            <Grid Name="gridTitulo" Height="80">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="164*" />
+                    <ColumnDefinition Width="316*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="/Imagenes/logo.png" Grid.Column="0" HorizontalAlignment="Center"></Image>
+                <TextBlock Grid.Column="1" Text="Eliminar Cliente" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="38"></TextBlock>
+            </Grid>
+        </StackPanel>
+
+        <!--ContentPanel. Colocar aquí el contenido adicional-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <TextBlock Foreground="#3c1809" Margin="0,10,0,0" FontFamily="Comic Sans MS" FontSize="28" Width="277"> Selecciona el cliente <LineBreak/>      que deseas eliminar: </TextBlock>
+                <ListBox Name="listClientes" Margin="-12,17,0,0" SelectionChanged="listClientes_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                                <Rectangle Height="20" Width="20" Fill="Maroon"  Margin="12,0,9,0"/>
+                                <StackPanel >
+                                    <TextBlock Text="{Binding nombres}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" Foreground="#3c1809"/>
+                                    <TextBlock Text="{Binding telefono}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="#3c1809"/>
+                                </StackPanel>
+                                <TextBlock Text="{Binding apellidos}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" Foreground="#3c1809"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+    <!--Código de ejemplo que muestra el uso de ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Botón 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Botón 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Elemento de menú 1"/>
+                <shell:ApplicationBarMenuItem Text="Elemento de menú 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

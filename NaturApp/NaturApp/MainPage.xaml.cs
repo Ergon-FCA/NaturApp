@@ -63,6 +63,14 @@ namespace NaturApp
                 }
 
                 listClientes.ItemsSource = arrClientes;
+
+                listClientes.Visibility = Visibility.Visible;
+                txtNoClientesRecientes.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                listClientes.Visibility = Visibility.Collapsed;
+                txtNoClientesRecientes.Visibility = Visibility.Visible;
             }
 
             base.OnNavigatedTo(e);
@@ -98,6 +106,42 @@ namespace NaturApp
                     break;
                 case 2:
                     NavigationService.Navigate(new Uri("/Clientes/consultarCliente.xaml", UriKind.Relative));
+                    break;
+                case 3:
+                    break;
+            }
+        }
+
+        private void eliminar_Click(object sender, EventArgs e)
+        {
+            int indice = PanoramaNatura.SelectedIndex;
+
+            switch (indice)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    NavigationService.Navigate(new Uri("/Clientes/eliminarCliente.xaml", UriKind.Relative));
+                    break;
+                case 3:
+                    break;
+            }
+        }
+
+        private void actualizar_Click(object sender, EventArgs e)
+        {
+            int indice = PanoramaNatura.SelectedIndex;
+
+            switch (indice)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    NavigationService.Navigate(new Uri("/Clientes/consultaActualizarCliente.xaml", UriKind.Relative));
                     break;
                 case 3:
                     break;
