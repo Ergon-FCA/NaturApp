@@ -89,20 +89,7 @@
                     <Border Background="Maroon"  BorderBrush="Silver" BorderThickness="1" Height="44" Name="borderPagos" VerticalAlignment="Center" Width="514">
                         <TextBlock Text="Recientes" Foreground="White" FontSize="25"></TextBlock>
                     </Border>
-                    <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
-                                    <!--Reemplazar el rectángulo por la imagen-->
-                                    <Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>
-                                    <StackPanel Width="311">
-                                        <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                        <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+
                 </StackPanel>
 
             </controls:PanoramaItem>
