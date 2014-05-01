@@ -39,7 +39,7 @@
         <!--ContentPanel. Colocar aquí el contenido adicional-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
-                <TextBlock Foreground="#3c1809" Margin="0,10,0,0" FontFamily="Comic Sans MS" FontSize="28" Width="277"> Selecciona el cliente <LineBreak/>      que deseas editar:</TextBlock>
+                <TextBlock Foreground="#3c1809" Margin="0,10,0,0" FontFamily="Comic Sans MS" FontSize="28" Width="277"> Selecciona el cliente <LineBreak/>     a realizar el pago:</TextBlock>
                 <ListBox Name="listClientes" Margin="-12,17,0,0" SelectionChanged="listClientes_SelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>

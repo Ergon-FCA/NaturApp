@@ -103,7 +103,11 @@
     <Compile Include="Pagos\consultaClientePago.xaml.cs">
       <DependentUpon>consultaClientePago.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pagos\consultaPedidoPagos.xaml.cs">
+      <DependentUpon>consultaPedidoPagos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pagos\tablaPagos.cs" />
+    <Compile Include="Pedidos\Pedido.cs" />
     <Compile Include="Pedidos\tablaPedidos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLite.cs" />
@@ -148,6 +152,10 @@
       <SubType>Designer</SubType>
     </DesignData>
     <Page Include="Pagos\consultaClientePago.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pagos\consultaPedidoPagos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

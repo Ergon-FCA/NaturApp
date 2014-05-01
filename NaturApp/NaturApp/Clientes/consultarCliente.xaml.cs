@@ -53,7 +53,7 @@ namespace NaturApp.Clientes
 
         private void listClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var cliente = listClientes.SelectedItem as Cliente;
+            //var cliente = listClientes.SelectedItem as Cliente;
 
             //MessageBox.Show("El id del cliente es:" + cliente.id);
         }

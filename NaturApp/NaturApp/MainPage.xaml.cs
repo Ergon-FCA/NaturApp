@@ -13,6 +13,8 @@ using Microsoft.Phone.Controls;
 using SQLite;
 using NaturApp.Clientes;
 using System.Collections.ObjectModel;
+using NaturApp.Pagos;
+using NaturApp.Pedidos;
 
 namespace NaturApp
 {
@@ -29,6 +31,8 @@ namespace NaturApp
 
             db = new SQLiteConnection("naturapp.db");
             db.CreateTable<tablaClientes>();
+            db.CreateTable<tablaPedidos>();
+            db.CreateTable<tablaPagos>();
 
             // Establecer el contexto de datos del control ListBox control en los datos de ejemplo
             DataContext = App.ViewModel;
@@ -90,6 +94,7 @@ namespace NaturApp
                     NavigationService.Navigate(new Uri("/Clientes/crearCliente.xaml", UriKind.Relative));
                     break;
                 case 3:
+                    NavigationService.Navigate(new Uri("/Pagos/consultaClientePago.xaml", UriKind.Relative));
                     break;
             }
         }
