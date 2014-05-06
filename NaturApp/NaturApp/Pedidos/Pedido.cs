@@ -32,4 +32,18 @@ namespace NaturApp.Pedidos
             this.totalPedido = total;
         }
     }
+
+    public class PedidoConsulta
+    {
+        public string Producto { get; set; }
+        public string fecha { get; set; }
+        public string total { get; set; }
+
+        public PedidoConsulta(string prod, string date, string total)
+        {
+            this.Producto = prod;
+            this.fecha = date;
+            this.total = total;
+        }
+    }
 }

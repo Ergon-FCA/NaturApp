@@ -107,6 +107,15 @@
       <DependentUpon>consultaPedidoPagos.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pagos\tablaPagos.cs" />
+    <Compile Include="Pedidos\consultaClientePedidos.xaml.cs">
+      <DependentUpon>consultaClientePedidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\consultarPedidos.xaml.cs">
+      <DependentUpon>consultarPedidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\crearPedidos.xaml.cs">
+      <DependentUpon>crearPedidos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pedidos\Pedido.cs" />
     <Compile Include="Pedidos\tablaPedidos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,6 +165,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pagos\consultaPedidoPagos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pedidos\consultaClientePedidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pedidos\consultarPedidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pedidos\crearPedidos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

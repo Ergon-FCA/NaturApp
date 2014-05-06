@@ -17,6 +17,7 @@ namespace NaturApp.Pedidos
         [PrimaryKey, AutoIncrement]
         public int idPedido { get; set; }
         public int idCliente { get; set; }
+        public int idProducto { get; set; }
         public string producto { get; set; }
         public double precio { get; set; }
         public int cantidad { get; set; }

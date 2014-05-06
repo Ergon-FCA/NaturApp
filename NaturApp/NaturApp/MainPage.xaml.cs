@@ -89,6 +89,7 @@ namespace NaturApp
                 case 0:
                     break;
                 case 1:
+                    NavigationService.Navigate(new Uri("/Pedidos/consultaClientePedidos.xaml?transaccion=crear", UriKind.Relative));
                     break;
                 case 2:
                     NavigationService.Navigate(new Uri("/Clientes/crearCliente.xaml", UriKind.Relative));
@@ -108,6 +109,7 @@ namespace NaturApp
                 case 0:
                     break;
                 case 1:
+                    NavigationService.Navigate(new Uri("/Pedidos/consultaClientePedidos.xaml?transaccion=consultar", UriKind.Relative));
                     break;
                 case 2:
                     NavigationService.Navigate(new Uri("/Clientes/consultarCliente.xaml", UriKind.Relative));
